@@ -1,0 +1,156 @@
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    margin-left: 60px;
+  }
+  .main-btn {
+    background-color: var(--color-secondary);
+    color: #222;
+    border: none;
+    padding: 2px;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition-default);
+    text-align: center;
+    display: block;
+    margin: 5px;
+    width: 90%;
+  }
+  
+  .main-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  body.dark-mode .main-btn {
+    background-color: #222;
+    color: var(--color-secondary);
+  }
+  
+  body.dark-mode .main-btn:hover {
+    background-color: #555;
+  }
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: grey;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+body.dark-mode .main-btn {
+  background-color: var(--color-secondary);
+  color:black;
+}
+
+body.dark-mode .main-btn:hover {
+  background-color: #1b1b1b;
+  color: white;
+}
+#logout-btn {
+  background-color: #1c3fda;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+}
+body.dark-mode #logout-btn {
+  background-color: #a00018;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+}
+#logout-btn:hover {
+  background-color: #1d1d1d;
+  color: var(--color-secondary);
+}
+
+body.dark-mode #logout-btn:hover {
+  background-color:black;
+  color: var(--color-secondary);
+}
+#section_coleccion{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 10px;
+    text-align: center;
+    margin-right: 10px;
+}
+#imagenPokemon{
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.pokemonTipo {
+  display: inline-block;
+  padding: 5px;
+  font-size: 12px;
+  margin: 5px;
+  border-radius: 8px;
+  color: white;
+  background-color: var(--color-primary);
+}
+body.dark-mode .pokemonTipo {
+    background-color: var(--color-secondary);
+    color: black;
+}
+

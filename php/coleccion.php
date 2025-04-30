@@ -1,0 +1,39 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemanager</title>
+  <link rel="stylesheet" href="../css/styleCommon.css">
+  <link rel="stylesheet" href="../css/styleColeccion.css">
+  <link rel="shortcut icon" href="https://emojis.slackmojis.com/emojis/images/1643514062/186/pokeball.png?1643514062">
+  <link href="https://fonts.cdnfonts.com/css/pok" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <?php
+    include_once '../includes/header.php';
+    ?>
+    <main class="main-perfil">
+      <div class="buttons-container">
+        <a href="sobres.php" class="main-btn" id="sobres">Sobres</a>
+        <a href="coleccion.php" class="main-btn" id="coleccion">Colección</a>
+        <a href="batalla.php" class="main-btn" id="batalla">Batalla</a>
+        <a href="perfil.php" class="main-btn" id="perfil">Perfil</a>
+      </div>
+      <section id="section_coleccion">
+        <?php
+        include_once '../includes/mostrarPokemon.php';
+        ?>
+      </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="../js/ModoOscuro.js"></script>
+</body>
+
+</html>
