@@ -188,10 +188,11 @@ body.dark-mode #abrirSobre:hover {
   margin-right: 10px;
 }
 #imagenPokemon{
-  width: 150px;
-  height: 200px;
+  width: auto;
+  height: auto;
   margin-left: 10px;
   margin-top: 10px;
+  object-fit: cover;
 }
 .pokemonTipo {
 display: inline-block;

@@ -139,6 +139,7 @@ body.dark-mode #logout-btn:hover {
     height: 100px;
     margin-left: 10px;
     margin-top: 10px;
+    object-fit: fill;
 }
 .pokemonTipo {
   display: inline-block;
