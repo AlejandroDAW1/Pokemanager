@@ -36,7 +36,7 @@ session_start();
         </form>
 
         <dialog id="RegistroUsuarioDialog">
-          <form id="registration-form" action="../includes/registro.php" method="POST" enctype="multipart/form-data">
+          <form id="registration-form" action="../includes/registro.php" method="POST">
             <div>
               <label for="nombreRegistro">Nombre</label>
               <input type="text" id="nombreRegistro" name="nombreRegistro" placeholder="Ingresa tu nombre" required>
