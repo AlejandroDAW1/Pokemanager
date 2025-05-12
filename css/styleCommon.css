@@ -156,3 +156,40 @@ body.dark-mode a {
   text-decoration: none;
   color: white;
 }
+#admin-btn {
+  background-color: #1c3fda;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+}
+body.dark-mode #admin-btn {
+  background-color: #a00018;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+}
+#admin-btn:hover {
+  background-color: black;
+  color: white;
+}
+body.dark-mode #admin-btn:hover {
+  background-color: black;
+  color: white;
+}
+#botonesInicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
