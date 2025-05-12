@@ -25,9 +25,7 @@ try {
             echo "</div>";
         }
     } else {
-        $_SESSION['error'] = "No se ha podido mostrar los pokemons.";
-        header("Location: ../php/coleccion.php");
-        die();
+        echo "<p class='error'>No tienes pokemon en tu colección.</p>";
     }
 } catch (PDOException $e) {
     $_SESSION['error'] = "Error al conectar a la base de datos.";
