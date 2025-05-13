@@ -49,7 +49,7 @@ require_once '../includes/conectarBBDD.php';
                         echo "<td>" . htmlspecialchars($usuario['email']) . "</td>";
                         echo "<td>";
                         echo "<button id='botonEditar' data-id='" . htmlspecialchars($usuario['id']) . "'>Editar</button> ";
-                        echo "<a href='../includes/eliminar.php?id=" . urlencode($usuario['id']) . "' id='botonBorrar' onclick='return confirm(\"¿Estás seguro de que deseas eliminar este usuario?\")'>Eliminar</a>";
+                        echo "<a href='../includes/eliminarCuenta.php?id=" . urlencode($usuario['id']) . "' id='botonBorrar' >Eliminar</a>";
                         echo "</td>";
                         echo "</tr>";
                     }
@@ -60,7 +60,7 @@ require_once '../includes/conectarBBDD.php';
         </tbody>
       </table>
       <dialog id="Dialogo_editarUsuario">
-            <form id="editUserForm">
+            <form id="editUserForm" action="../includes/editarUsuarios.php" method="POST">
                 <h2>Editar Usuario</h2>
                 <input type="hidden" id="editUserId" name="id">
                 <div>
@@ -75,13 +75,24 @@ require_once '../includes/conectarBBDD.php';
                 <label for="editUserAdmin">Administrador:</label>
                 <input type="checkbox" id="editUserAdmin" name="is_admin">
                 </div>
-                <button type="button" id="guardarEdit">Guardar Cambios</button>
+                <button type="submit" id="guardarEdit">Guardar Cambios</button>
                 <button type="button" id="cancelarEdit">Cancelar</button>
             </form>
         </dialog>
     </main>
-  <script src="../js/editarUsuarios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php
+  if (isset($_SESSION['error'])) {
+    echo "<script>Swal.fire('Error', '" . $_SESSION['error'] . "', 'error');</script>";
+    unset($_SESSION['error']);
+  }
+  if (isset($_SESSION['success'])) {
+    echo "<script>Swal.fire('Éxito', '" . $_SESSION['success'] . "', 'success');</script>";
+    unset($_SESSION['success']);
+  }
+  ?>
   <script src="../js/ModoOscuro.js"></script>
+  <script src="../js/editarUsuarios.js"></script>
 </body>
 
 </html>

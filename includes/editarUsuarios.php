@@ -1,14 +1,14 @@
 <?php
 require_once 'conectarBBDD.php';
+session_start();
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents('php://input'), true);
-
-    if (isset($data['id'], $data['nombre'], $data['email'], $data['is_admin'])) {
-        $id = $data['id'];
-        $nombre = $data['nombre'];
-        $email = $data['email'];
-        $isAdmin = $data['is_admin'];
+    if (isset($_POST['id'], $_POST['nombre'], $_POST['email'])) {
+        $id = $_POST['id'];
+        $nombre = $_POST['nombre'];
+        $email = $_POST['email'];
+        $isAdmin = $_POST['is_admin'] === '1' ? 1 : 0;
 
         try {
             $stmt = $conexion->prepare("UPDATE usuarios SET nombre = :nombre, email = :email, is_admin = :is_admin WHERE id = :id");
@@ -18,22 +18,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
             if ($stmt->execute()) {
-                http_response_code(200);
-                echo json_encode(['message' => 'Usuario actualizado con éxito.']);
+                $_SESSION['success'] = "Usuario actualizado correctamente.";
             } else {
-                http_response_code(500);
-                echo json_encode(['error' => 'Error al actualizar el usuario.']);
+                $_SESSION['error'] = "No se pudo actualizar el usuario.";
             }
         } catch (PDOException $e) {
-            http_response_code(500);
-            echo json_encode(['error' => 'Error en la base de datos: ' . $e->getMessage()]);
+            $_SESSION['error'] = "Error en la base de datos: " . $e->getMessage();
         }
     } else {
-        http_response_code(400);
-        echo json_encode(['error' => 'Datos incompletos.']);
+        $_SESSION['error'] = "Por favor, completa todos los campos.";
     }
+
+    header("Location: ../php/admin.php");
+    exit();
 } else {
-    http_response_code(405);
-    echo json_encode(['error' => 'Método no permitido.']);
+    $_SESSION['error'] = "Método no permitido.";
+    header("Location: ../php/admin.php");
+    exit();
 }
 ?>
