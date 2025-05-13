@@ -61,8 +61,8 @@ require_once '../includes/conectarBBDD.php';
         </tbody>
       </table>
       </section>
-      <dialog id="Dialogo_editarUsuario">
-            <form id="editUserForm" action="../includes/editarUsuarios.php" method="POST">
+      <dialog id="Dialogo_editarUsuario" class="bordeLetra">
+            <form id="editarUsuarioForm" action="../includes/editarUsuarios.php" method="POST">
                 <h2>Editar Usuario</h2>
                 <input type="hidden" id="editUserId" name="id">
                 <div>
@@ -73,9 +73,10 @@ require_once '../includes/conectarBBDD.php';
                 <label for="editUserEmail">Correo Electrónico:</label>
                 <input type="email" id="editUserEmail" name="email" required>
                 </div>
-                <div>
+                <div id="ContainerIsAdmin">
+                <input type="hidden" name="is_admin" value="0">
                 <label for="editUserAdmin">Administrador:</label>
-                <input type="checkbox" id="editUserAdmin" name="is_admin">
+                <input type="checkbox" id="editUserAdmin" name="is_admin" value="1">
                 </div>
                 <button type="submit" id="guardarEdit">Guardar Cambios</button>
                 <button type="button" id="cancelarEdit">Cancelar</button>

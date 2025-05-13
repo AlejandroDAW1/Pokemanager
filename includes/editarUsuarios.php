@@ -4,11 +4,11 @@ session_start();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['id'], $_POST['nombre'], $_POST['email'])) {
+    if (isset($_POST['id'], $_POST['nombre'], $_POST['email'], $_POST['is_admin'])) {
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $email = $_POST['email'];
-        $isAdmin = $_POST['is_admin'] === '1' ? 1 : 0;
+        $isAdmin = $_POST['is_admin'];
 
         try {
             $stmt = $conexion->prepare("UPDATE usuarios SET nombre = :nombre, email = :email, is_admin = :is_admin WHERE id = :id");
