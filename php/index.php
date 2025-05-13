@@ -30,6 +30,17 @@ session_start();
     </main>
   </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php
+  if (isset($_SESSION['error'])) {
+    echo "<script>Swal.fire('Error', '" . $_SESSION['error'] . "', 'error');</script>";
+    unset($_SESSION['error']);
+  }
+  if (isset($_SESSION['success'])) {
+    echo "<script>Swal.fire('Éxito', '" . $_SESSION['success'] . "', 'success');</script>";
+    unset($_SESSION['success']);
+  }
+  ?>
   <script src="../js/ModoOscuro.js"></script>
   <script src="../js/index.js"></script>
 </body>

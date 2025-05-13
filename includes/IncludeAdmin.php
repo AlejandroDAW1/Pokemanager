@@ -16,11 +16,12 @@ try {
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($usuario && $usuario['is_admin']) {
-        echo "<h1>Panel de Administración</h1>";
-        echo "<a href='../php/admin.php'>Administrar Usuarios</a>";
+        $_SESSION['success'] = "Bienvenido, administrador.";
+        header('Location: ../php/admin.php');
+        exit();
     } else {
-        echo "<h1>No tienes permisos para acceder a esta página.</h1>";
-        echo "<a href='../php/index.php'>Volver al inicio</a>";
+        $_SESSION['error'] = "No tienes permiso para acceder a esta página.";
+        header('Location: ../php/index.php');
     }
 } catch (PDOException $e) {
     $_SESSION['error'] = "Error al conectar a la base de datos.";
