@@ -1,0 +1,74 @@
+.barraVida{
+    background-color: red;
+    border-radius: 5px;
+    text-align: center;
+}
+.vida{
+    width: 250px;
+}
+.pokemon img{
+    height: 150px;
+}
+.equipo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.equipo img{
+    width: auto;
+    height: 50px;
+}
+#batalla{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.tipo{
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    padding: 0px 10px; 
+}
+.nombre{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#log{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#log {
+  --sb-size: 17px;
+}
+
+#log::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+#log::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 11px;
+}
+
+#log::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 11px;
+  
+}
+
