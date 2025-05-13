@@ -8,6 +8,14 @@
   --border-radius-small: 10px;
   --transition-default: all 0.3s ease;
   --font-main: 'Pokemon Solid', sans-serif;
+  --colorBordeLetra: black;
+}
+.bordeLetra {
+      text-shadow:
+    -1px -1px 0 var(--colorBordeLetra),
+     1px -1px 0 var(--colorBordeLetra),
+    -1px  1px 0 var(--colorBordeLetra),
+     1px  1px 0 var(--colorBordeLetra);
 }
 
 body {
@@ -40,7 +48,13 @@ body.dark-mode .container {
   background: var(--bg-dark);
   border-color: var(--color-secondary);
 }
-
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    margin-left: 60px;
+}
 
 .navbar {
   display: flex;
@@ -68,32 +82,32 @@ body.dark-mode .logo {
 
 .main-btn {
   background-color: var(--color-secondary);
-  color: #222;
+  color: white;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
+  padding: 2px;
+  font-size: 20px;
   border-radius: 12px;
   cursor: pointer;
   transition: var(--transition-default);
   text-align: center;
   display: block;
-  width: 100%;
-}
-
-.main-btn:hover {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-body.dark-mode .main-btn {
-  background-color: #222;
-  color: var(--color-secondary);
-}
-
-body.dark-mode .main-btn:hover {
+  margin: 5px;
+  width: 90%;
+ }
+ 
+ .main-btn:hover {
   background-color: #555;
-}
+  color: white;
+ }
+ 
+body.dark-mode .main-btn {
+  background-color: var(--color-secondary);
+  color: white;
+ }
+ 
+ body.dark-mode .main-btn:hover {
+  background-color: #555;
+ }
 
 .dark-mode-toggle {
   display: flex;
@@ -179,12 +193,45 @@ body.dark-mode #admin-btn {
   letter-spacing: 2px;
 }
 #admin-btn:hover {
-  background-color: black;
+  background-color: #555;
   color: white;
 }
 body.dark-mode #admin-btn:hover {
-  background-color: black;
+  background-color: #555;
   color: white;
+}
+#logout-btn {
+  background-color: #1c3fda;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+}
+body.dark-mode #logout-btn {
+  background-color: #a00018;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+}
+#logout-btn:hover {
+  background-color: #555;
+  color: var(--color-secondary);
+}
+
+body.dark-mode #logout-btn:hover {
+  background-color: #555;
+  color: var(--color-secondary);
 }
 #botonesInicio {
   display: flex;

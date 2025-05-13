@@ -10,8 +10,8 @@
     <?php
     if (isset($_SESSION["id"])) {
         echo "<div id='botonesInicio'>";
-        echo "<a href='../includes/includeAdmin.php' id='admin-btn' id='admin'>Admin</a>";
-        echo "<button id='logout-btn'><a href='../includes/logout.php'>Cerrar sesión</a></button>";
+        echo "<a href='../includes/includeAdmin.php' id='admin-btn' class='bordeLetra'>Admin</a>";
+        echo "<button id='logout-btn' class='bordeLetra'><a href='../includes/logout.php'>Cerrar sesión</a></button>";
         echo "</div>";
       }
     ?>

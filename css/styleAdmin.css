@@ -1,0 +1,39 @@
+
+.admin-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid black;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: rgba(248, 252, 0, 0.8);
+    color: white;
+    letter-spacing: 3px;
+    gap: 5px;
+}
+.admin-section th{
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+.admin-section td{
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+#botonEditar{
+    background-color: #1c3fda;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition-default);
+    letter-spacing: 2px;
+}

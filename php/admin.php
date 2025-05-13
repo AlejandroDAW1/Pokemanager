@@ -10,7 +10,7 @@ require_once '../includes/conectarBBDD.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokemanager</title>
   <link rel="stylesheet" href="../css/styleCommon.css">
-  <link rel="stylesheet" href="../css/styleColeccion.css">
+  <link rel="stylesheet" href="../css/styleAdmin.css">
   <link rel="shortcut icon" href="https://emojis.slackmojis.com/emojis/images/1643514062/186/pokeball.png?1643514062">
   <link href="https://fonts.cdnfonts.com/css/pok" rel="stylesheet">
 </head>
@@ -19,12 +19,13 @@ require_once '../includes/conectarBBDD.php';
   <div class="container">
     <?php include_once '../includes/header.php'; ?>
     <main class="main-admin">
-      <div class="buttons-container">
+      <div class="buttons-container bordeLetra">
         <a href="sobres.php" class="main-btn" id="sobres">Sobres</a>
         <a href="coleccion.php" class="main-btn" id="coleccion">Colección</a>
         <a href="batalla.php" class="main-btn" id="batalla">Batalla</a>
         <a href="perfil.php" class="main-btn" id="perfil">Perfil</a>
       </div>
+      <section class="admin-section bordeLetra">
       <h1>Panel de Administración</h1>
       <table>
         <thead>
@@ -59,6 +60,7 @@ require_once '../includes/conectarBBDD.php';
             ?>
         </tbody>
       </table>
+      </section>
       <dialog id="Dialogo_editarUsuario">
             <form id="editUserForm" action="../includes/editarUsuarios.php" method="POST">
                 <h2>Editar Usuario</h2>

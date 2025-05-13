@@ -21,7 +21,7 @@ session_start();
     include_once '../includes/header.php';
     ?>
     <main>
-      <div class="buttons-container">
+      <div class="buttons-container bordeLetra">
         <a href="sobres.php" class="main-btn" id="sobres">Sobres</a>
         <a href="coleccion.php" class="main-btn" id="coleccion">Colección</a>
         <a href="batalla.php" class="main-btn" id="batalla">Batalla</a>
