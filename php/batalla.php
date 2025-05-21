@@ -6,13 +6,6 @@
 
 <body>
   <div class="container">
-    <main class="main-perfil">
-      <div class="buttons-container bordeLetra">
-        <a href="sobres.php" class="main-btn" id="sobres">Sobres</a>
-        <a href="coleccion.php" class="main-btn" id="coleccion">Colección</a>
-        <a href="batalla.php" class="main-btn" id="batalla">Batalla</a>
-        <a href="perfil.php" class="main-btn" id="perfil">Perfil</a>
-      </div>
       <section id="ComenzarBatalla">
         <button id="botonBatalla">LUCHAR</button>
       </section>
@@ -62,7 +55,6 @@
         <p>pikachu ha usado un ataque normal</p>
         <p>pikachu ha recibido 50 de daño</p>
       </section>
-    </main>
   </div>
 </body>
 
@@ -70,4 +62,3 @@
 <script src="../js/ModoOscuro.js"></script>
 <script src="../js/batalla.js"></script>
 
-<?php include_once '../includes/footer.php'; ?>

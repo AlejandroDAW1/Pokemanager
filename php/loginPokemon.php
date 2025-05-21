@@ -48,7 +48,6 @@
             <button type="button" id="cancelarRegistro">Cancelar</button>
           </form>
         </dialog>
-      </section>
     </main>
   </div>
 </body>
@@ -66,5 +65,3 @@ if (isset($_SESSION['success'])) {
 ?>
 <script src="../js/ModoOscuro.js"></script>
 <script src="../js/login.js"></script>
-
-<?php include_once '../includes/footer.php';?>

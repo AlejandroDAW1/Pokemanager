@@ -7,13 +7,6 @@ require_once '../includes/conectarBBDD.php';
 <link rel="stylesheet" href="../css/styleAdmin.css">
 <body>
   <div class="container">
-    <main class="main-admin">
-      <div class="buttons-container bordeLetra">
-        <a href="sobres.php" class="main-btn" id="sobres">Sobres</a>
-        <a href="coleccion.php" class="main-btn" id="coleccion">Colección</a>
-        <a href="batalla.php" class="main-btn" id="batalla">Batalla</a>
-        <a href="perfil.php" class="main-btn" id="perfil">Perfil</a>
-      </div>
       <section class="admin-section bordeLetra">
         <h1>Panel de Administración</h1>
         <table>
@@ -71,7 +64,6 @@ require_once '../includes/conectarBBDD.php';
           <button type="button" id="cancelarEdit">Cancelar</button>
         </form>
       </dialog>
-  </main>
   </div>
 </body>
 
@@ -89,4 +81,4 @@ require_once '../includes/conectarBBDD.php';
   <script src="../js/ModoOscuro.js"></script>
   <script src="../js/editarUsuarios.js"></script>
 
-<?php include_once '../includes/footer.php';?>
+
