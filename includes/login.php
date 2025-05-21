@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['fecha_registro'] = $usuario['fecha_registro'];
                     $_SESSION['sobres_disponibles'] = $usuario['sobres_disponibles'];
                     $_SESSION['ultima_conexion'] = $usuario['ultima_conexion'];
-                    $_SESSION['is_admin'] = $usuario['is_admin'];
+                    $_SESSION['is_admin'] = (bool)$usuario['is_admin'];
                     
                     $dias_ultima_conexion = round((strtotime(date("Y-m-d H:i:s")) - strtotime($_SESSION['ultima_conexion'])) / (60 * 60 * 24));
                     if ($dias_ultima_conexion > 0) {

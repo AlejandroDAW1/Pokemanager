@@ -11,9 +11,9 @@
         <button class="tab-btn bordeLetra" data-tab="coleccion">Colección</button>
         <button class="tab-btn bordeLetra" data-tab="batalla">Batalla</button>
         <button class="tab-btn bordeLetra" data-tab="perfil">Perfil</button>
-        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
+        <?php if ($_SESSION['is_admin']){?>
           <button class="tab-btn bordeLetra" data-tab="admin">Admin</button>
-        <?php endif; ?>
+        <?php } ?>
       </div>
       <div class="tab-content">
         <div id="sobres" class="tab-pane active">
@@ -28,11 +28,11 @@
         <div id="perfil" class="tab-pane">
           <?php include_once 'perfil.php'; ?>
         </div>
-        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 1): ?>
+        <?php if ($_SESSION['is_admin']){ ?>
           <div id="admin" class="tab-pane">
             <?php include_once 'admin.php'; ?>
           </div>
-        <?php endif; ?>
+        <?php } ?>
       </div>
     </main>
   </div>

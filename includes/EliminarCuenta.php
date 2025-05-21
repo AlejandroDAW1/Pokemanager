@@ -23,6 +23,6 @@ try {
 } catch (PDOException $e) {
     $_SESSION['error'] = "Error en la base de datos: " . $e->getMessage();
 }
-header("Location: ../php/admin.php");
+header("Location: ../php/index.php");
 exit();
 ?>

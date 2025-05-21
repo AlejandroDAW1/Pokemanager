@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['error'] = "Por favor, completa todos los campos.";
     }
 
-    header("Location: ../php/admin.php");
+    header("Location: ../php/index.php");
     exit();
 } else {
     $_SESSION['error'] = "Método no permitido.";
-    header("Location: ../php/admin.php");
+    header("Location: ../php/index.php");
     exit();
 }
 ?>
