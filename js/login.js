@@ -1,13 +1,8 @@
-
-const botonRegistro = document.querySelector("#NoCuentaLogin");
-const dialogoRegistro = document.querySelector("#RegistroUsuarioDialog");
-const botonCerrar = document.querySelector("#cancelarRegistro");
-
-botonRegistro.addEventListener("click", () =>{
-    dialogoRegistro.showModal();
-});
-botonCerrar.addEventListener("click", () =>{
-    dialogoRegistro.close();
+document.getElementById('NoCuentaLogin').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('RegistroUsuarioDialog').showModal();
 });
 
-
+document.getElementById('cancelarRegistro').addEventListener('click', () => {
+    document.getElementById('RegistroUsuarioDialog').close();
+});

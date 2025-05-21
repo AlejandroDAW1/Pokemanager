@@ -1,40 +1,19 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokemanager</title>
-  <link rel="stylesheet" href="../css/styleCommon.css">
-  <link rel="stylesheet" href="../css/styleLogin.css">
-  <link rel="shortcut icon" href="https://emojis.slackmojis.com/emojis/images/1643514062/186/pokeball.png?1643514062">
-  <link href="https://fonts.cdnfonts.com/css/pok" rel="stylesheet">
-</head>
-
+<?php include_once '../includes/header.php'; ?>
+<link rel="stylesheet" href="../css/styleLogin.css">
 <body>
   <div class="container">
-    <?php
-    include_once '../includes/header.php';
-    ?>
-    <main class="main-login">
-      <section class="login-form">
-        <h2 id="InicioSesion">Inicio de Sesión</h2>
-        <form id="login-form" action="../includes/login.php" method="POST">
-          <div>
-            <label for="emailLogin">Correo electrónico</label>
-            <input type="email" id="emailLogin" name="emailLogin" placeholder="Ingresa tu email">
-          </div>
-          <div>
-            <label for="pass">Contraseña</label>
-            <input type="password" id="pass" name="pass" placeholder="Ingresa tu contraseña">
-          </div>
-          <button type="submit" id="botonLogin">Iniciar Sesión</button>
-          <a id="NoCuentaLogin">¿No tienes cuenta?, registrate aqui.</a>
-        </form>
-
+    <h2>Descubre el mundo de PokeManager</h2>
+    <p>
+      ¡Saludos Entrenador/a! Has llegado a <strong>Pokemanager</strong>, la mejor plataforma para gestionar tus Pokémon. 
+      Aquí podrás registrar tus Pokémon y combatir con ellos. Si ya tienes una cuenta, inicia sesión. Si no, <strong>¡regístrate ahora!</strong>
+    </p>
+    <p>
+      En Pokemanager, podrás disfrutar de una experiencia única en la que podrás gestionar tus Pokémon de manera sencilla y divertida.
+      Si eres nuevo en el mundo Pokémon, no te preocupes, aquí encontrarás todo lo que necesitas para comenzar tu aventura.
+    </p>
+    <main class="registro">
         <dialog id="RegistroUsuarioDialog">
           <form id="registration-form" action="../includes/registro.php" method="POST" enctype="multipart/form-data">
             <div>
@@ -72,20 +51,20 @@ session_start();
       </section>
     </main>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <?php
-  if (isset($_SESSION['error'])) {
-    echo "<script>Swal.fire('Error', '" . $_SESSION['error'] . "', 'error');</script>";
-    unset($_SESSION['error']);
-  }
-  if (isset($_SESSION['success'])) {
-    echo "<script>Swal.fire('Éxito', '" . $_SESSION['success'] . "', 'success');</script>";
-    unset($_SESSION['success']);
-  }
-  ?>
-  <script src="../js/ModoOscuro.js"></script>
-  <script src="../js/login.js"></script>
 </body>
 
-</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php
+if (isset($_SESSION['error'])) {
+  echo "<script>Swal.fire('Error', '" . $_SESSION['error'] . "', 'error');</script>";
+  unset($_SESSION['error']);
+}
+if (isset($_SESSION['success'])) {
+  echo "<script>Swal.fire('Éxito', '" . $_SESSION['success'] . "', 'success');</script>";
+  unset($_SESSION['success']);
+}
+?>
+<script src="../js/ModoOscuro.js"></script>
+<script src="../js/login.js"></script>
+
+<?php include_once '../includes/footer.php';?>

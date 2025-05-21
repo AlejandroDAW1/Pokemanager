@@ -1,26 +1,11 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokemanager</title>
-  <link rel="stylesheet" href="../css/styleCommon.css">
-  <link rel="stylesheet" href="../css/styleColeccion.css">
-  <link rel="stylesheet" href="../css/styleBatalla.css">
-  <link rel="stylesheet" href="../css/styleTipos.css">
-  <link rel="shortcut icon" href="https://emojis.slackmojis.com/emojis/images/1643514062/186/pokeball.png?1643514062">
-  <link href="https://fonts.cdnfonts.com/css/pok" rel="stylesheet">
-</head>
+<?php include_once '../includes/header.php'; ?>
+<link rel="stylesheet" href="../css/styleBatalla.css">
+<link rel="stylesheet" href="../css/styleTipos.css">
 
 <body>
   <div class="container">
-    <?php
-    include_once '../includes/header.php';
-    ?>
     <main class="main-perfil">
       <div class="buttons-container bordeLetra">
         <a href="sobres.php" class="main-btn" id="sobres">Sobres</a>
@@ -77,9 +62,12 @@ session_start();
         <p>pikachu ha usado un ataque normal</p>
         <p>pikachu ha recibido 50 de daño</p>
       </section>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="../js/ModoOscuro.js"></script>
-      <script src="../js/batalla.js"></script>
+    </main>
+  </div>
 </body>
 
-</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/ModoOscuro.js"></script>
+<script src="../js/batalla.js"></script>
+
+<?php include_once '../includes/footer.php'; ?>

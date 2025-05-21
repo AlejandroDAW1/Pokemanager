@@ -240,3 +240,59 @@ body.dark-mode #logout-btn:hover {
   margin-top: 20px;
   gap: 20px;
 }
+footer{
+  text-align: center;
+  padding: 10px;
+}
+
+.header-login-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-login-form input {
+    padding: 10px 15px;
+    border-radius: var(--border-radius-small);
+    border: 2px solid var(--color-primary);
+    background: var(--bg-light);
+}
+
+.bienvenida-usuario  {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-primary);
+}
+body.dark-mode .bienvenida-usuario {
+    color: var(--color-secondary);
+}
+#FotoPerfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    cursor: pointer;
+}
+
+body.dark-mode #FotoPerfil  {
+    border-color: var(--color-secondary);
+}
+
+body.dark-mode .header-login-form input {
+    background: var(--bg-dark);
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+#NoCuentaLogin {
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 200px;
+}
+
+body.dark-mode #NoCuentaLogin {
+    color: var(--color-secondary);
+}
