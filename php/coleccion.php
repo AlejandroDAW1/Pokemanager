@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php include_once '../includes/header.php'; ?>
-<link rel="stylesheet" href="../css/styleTipos.css">
 <link rel="stylesheet" href="../css/styleColeccion.css">
 
 <body>

@@ -56,7 +56,6 @@ body.dark-mode .navbar {
   border-color: var(--color-secondary);
 }
 
-
 .logo {
   font-size: 2rem;
   color: var(--color-secondary);
@@ -70,7 +69,7 @@ body.dark-mode .logo {
 }
 
 .tab-btn {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   color: white;
   border: none;
   padding: 10px;
@@ -82,12 +81,12 @@ body.dark-mode .logo {
   display: block;
   margin: 5px;
   width: 90%;
- }
+}
  
- .tab-btn:hover {
+.tab-btn:hover {
   background-color: #555;
   color: white;
- }
+}
  
 body.dark-mode .tab-btn {
   background-color: var(--color-secondary);
