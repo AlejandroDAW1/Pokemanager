@@ -13,5 +13,4 @@
   <section class="section-sobres-abiertos" id="sobresAbiertos"></section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../js/ModoOscuro.js"></script>
 <script src="../js/abrirSobres.js"></script>

@@ -77,5 +77,4 @@ if (isset($_SESSION['success'])) {
   unset($_SESSION['success']);
 }
 ?>
-<script src="../js/ModoOscuro.js"></script>
 <script src="../js/editarUsuarios.js"></script>

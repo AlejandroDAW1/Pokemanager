@@ -35,4 +35,3 @@ include_once '../includes/obtenerPokemonCapturados.php';
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../js/ModoOscuro.js"></script>
