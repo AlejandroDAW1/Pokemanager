@@ -1,39 +1,76 @@
-#borrarCuenta{
-  background-color: #a00018;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 12px;
-  font-size: 15px;
-  font-family: inherit;
-  cursor: pointer;
-  transition: var(--transition-default);
-  letter-spacing: 2px;
-}
-.perfil-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
+h2 {
+  font-size: 30px;
+  margin-left: 100px;
 }
 
 .perfil-img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid var(--color-primary);
 }
+
 body.dark-mode .perfil-img {
   border: 2px solid var(--color-secondary);
   background-color: #222;
 }
 
+.perfil-container {
+  display: flex;
+  gap: 50px;
+}
+
+.perfil-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-left: 20px;
+}
+
 .perfil-datos {
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
 }
 
-#emailUsu {
+.perfil-conexion {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.perfil-sobres{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 50px;
+}
+
+#borrarCuenta {
+  display: flex;
+  align-items: center;
+  background-color: #a00018;
+  color: white;
+  border: none;
+  border-radius: 12px;
   font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-default);
+  letter-spacing: 2px;
+  margin: 100px auto 0;
+  padding: 10px;
+  width: fit-content;
+  min-width: 150px;
+}
+
+#borrarCuenta:hover{
+  background-color: #555;
+}
+
+p {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }

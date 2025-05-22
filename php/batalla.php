@@ -5,60 +5,57 @@
 <link rel="stylesheet" href="../css/styleTipos.css">
 
 <body>
-  <div class="container">
-      <section id="ComenzarBatalla">
-        <button id="botonBatalla">LUCHAR</button>
-      </section>
-      <section id="batalla">
-        <div id="usuarioActual" class="usuario">
-          <div class="containerVida">
-            <div class="vida">
-              <div class="barraVida"><span></span></div>
-            </div>
-          </div>
-          <div class="pokemon">
-            <img src="" alt="Pokemon Usuario Actual">
-          </div>
-          <div class="nombre">
-            <span></span>
-            <div class="tipo"></div>
-          </div>
-          <div class="equipo"></div>
+  <section id="ComenzarBatalla">
+    <button id="botonBatalla">LUCHAR</button>
+  </section>
+  <section id="batalla">
+    <div id="usuarioActual" class="usuario">
+      <div class="containerVida">
+        <div class="vida">
+          <div class="barraVida"><span></span></div>
         </div>
-        <div id="usuarioRival" class="usuario">
-          <div class="containerVida">
-            <div class="vida">
-              <div class="barraVida"><span></span></div>
-            </div>
-          </div>
-          <div class="pokemon">
-            <img src="" alt="Pokemon Rival">
-          </div>
-          <div class="nombre">
-            <span></span>
-            <div class="tipo"></div>
-          </div>
-          <div class="equipo"></div>
+      </div>
+      <div class="pokemon">
+        <img src="" alt="Pokemon Usuario Actual">
+      </div>
+      <div class="nombre">
+        <span></span>
+        <div class="tipo"></div>
+      </div>
+      <div class="equipo"></div>
+    </div>
+    <div id="usuarioRival" class="usuario">
+      <div class="containerVida">
+        <div class="vida">
+          <div class="barraVida"><span></span></div>
         </div>
-      </section>
-      <section id="log">
-        <p>pikachu ha usado un ataque especial</p>
-        <p>pikachu ha usado un ataque especial</p>
-        <p>pikachu ha usado un ataque normal</p>
-        <p>pikachu ha recibido 50 de daño</p>
-        <p>pikachu ha usado un ataque especial</p>
-        <p>pikachu ha usado un ataque especial</p>
-        <p>pikachu ha usado un ataque normal</p>
-        <p>pikachu ha recibido 50 de daño</p>
-        <p>pikachu ha usado un ataque especial</p>
-        <p>pikachu ha usado un ataque especial</p>
-        <p>pikachu ha usado un ataque normal</p>
-        <p>pikachu ha recibido 50 de daño</p>
-      </section>
-  </div>
+      </div>
+      <div class="pokemon">
+        <img src="" alt="Pokemon Rival">
+      </div>
+      <div class="nombre">
+        <span></span>
+        <div class="tipo"></div>
+      </div>
+      <div class="equipo"></div>
+    </div>
+  </section>
+  <section id="log">
+    <p>pikachu ha usado un ataque especial</p>
+    <p>pikachu ha usado un ataque especial</p>
+    <p>pikachu ha usado un ataque normal</p>
+    <p>pikachu ha recibido 50 de daño</p>
+    <p>pikachu ha usado un ataque especial</p>
+    <p>pikachu ha usado un ataque especial</p>
+    <p>pikachu ha usado un ataque normal</p>
+    <p>pikachu ha recibido 50 de daño</p>
+    <p>pikachu ha usado un ataque especial</p>
+    <p>pikachu ha usado un ataque especial</p>
+    <p>pikachu ha usado un ataque normal</p>
+    <p>pikachu ha recibido 50 de daño</p>
+  </section>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/ModoOscuro.js"></script>
 <script src="../js/batalla.js"></script>
-
