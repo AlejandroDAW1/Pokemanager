@@ -170,6 +170,7 @@ function actualizarVida(contenedor, dano) {
 function actualizarLog(mensaje) {
   const log = document.getElementById("log");
   const nuevaEntrada = document.createElement("p");
+  log.style.display = "flex";
   nuevaEntrada.textContent = mensaje;
   log.insertBefore(nuevaEntrada, log.lastChild);
 }
