@@ -231,8 +231,8 @@ function iniciarCicloBatalla(datosUsuario, datosRival) {
         }
       }
     }
-
-    turnoUsuario = !turnoUsuario;
+    
+    turnoUsuario = !turnoUsuario; 
   }, 1000);
 }
 

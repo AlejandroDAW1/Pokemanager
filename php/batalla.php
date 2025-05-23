@@ -6,7 +6,7 @@
 
 <body>
   <section id="comenzarBatalla">
-    <button id="botonBatalla">LUCHAR</button>
+    <button id="botonBatalla" class="bordeLetra">LUCHAR</button>
   </section>
   <section id="containerBatalla">
     <div id="usuarioActual" class="usuario">
