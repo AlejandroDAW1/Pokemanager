@@ -156,7 +156,7 @@ function actualizarVida(contenedor, dano) {
   // Aplicar efecto de daño
   pokemonImg.style.transform = "scale(1.1)";
   pokemonImg.style.filter =
-    "sepia(100%) saturate(10000%) brightness(70%) hue-rotate(0deg)";
+    "sepia(100%) saturate(5000%) brightness(70%) hue-rotate(0deg)";
 
   // Remover el efecto después de 500ms
   setTimeout(() => {
@@ -233,7 +233,7 @@ function iniciarCicloBatalla(datosUsuario, datosRival) {
     }
 
     turnoUsuario = !turnoUsuario;
-  }, 300);
+  }, 1000);
 }
 
 function finalizarBatalla(mensaje) {
