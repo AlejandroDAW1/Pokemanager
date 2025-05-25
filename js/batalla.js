@@ -2,19 +2,21 @@ const BotonBatalla = document.getElementById("botonBatalla");
 let intervaloBatalla;
 
 BotonBatalla.addEventListener("click", () => {
-  reiniciarBatalla();
-  const url = "../api/obtenerBatalla.php";
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      pintarUsuario("usuarioActual", data.data.usuario);
-      pintarUsuario("usuarioRival", data.data.rival);
+  if (NoHayRival()) {
+    reiniciarBatalla();
+    const url = "../api/obtenerBatalla.php";
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        pintarUsuario("usuarioActual", data.data.usuario);
+        pintarUsuario("usuarioRival", data.data.rival);
 
-      // Iniciar el ciclo de batalla automático
-      iniciarCicloBatalla(data.data.usuario, data.data.rival);
-    })
-    .catch((error) => console.error("Error:", error));
+        // Iniciar el ciclo de batalla automático
+        iniciarCicloBatalla(data.data.usuario, data.data.rival);
+      })
+      .catch((error) => console.error("Error:", error));
+  }
 });
 
 function reiniciarBatalla() {
@@ -95,20 +97,20 @@ function iniciarBatalla(pokemonAtacante, pokemonDefensor) {
       // Usar ataque especial y defensa especial
       const ataqueEsp = parseInt(pokemonAtacante["Sp. Atk"]);
       const defensaEsp = parseInt(pokemonDefensor["Sp. Def"]);
-      return Math.floor((ataqueEsp / defensaEsp) * 20);
+      return Math.floor((ataqueEsp / (1 + (defensaEsp / 100))) * 0.5 * multiplicador);
     } else {
       // Usar ataque y defensa normales
       const ataque = parseInt(pokemonAtacante["Attack"]);
       const defensa = parseInt(pokemonDefensor["Defense"]);
-      return Math.floor((ataque / defensa) * 20);
+      return Math.floor((ataque / (1 + (defensa / 100))) * 0.5);
     }
   }
 
   const danoBase = calcularDanoBase();
-  const danoFinal = Math.floor(danoBase * multiplicador);
-
+  const danyoFinal = Math.floor(danoBase * multiplicador);
+  
   return {
-    danoCausado: danoFinal,
+    danoCausado: danyoFinal,
     multiplicador: multiplicador,
     efectividad: obtenerMensajeEfectividad(multiplicador),
     tipoAtaque: esAtaqueEspecial ? "especial" : "físico",
@@ -155,14 +157,13 @@ function actualizarVida(contenedor, dano) {
 
   // Aplicar efecto de daño
   pokemonImg.style.transform = "scale(1.1)";
-  pokemonImg.style.filter =
-    "sepia(100%) saturate(5000%) brightness(70%) hue-rotate(0deg)";
+  pokemonImg.style.filter =" brightness(0) saturate(100%) invert(19%) sepia(95%) saturate(5425%) hue-rotate(356deg) brightness(91%) contrast(118%)";
 
   // Remover el efecto después de 500ms
   setTimeout(() => {
     pokemonImg.style.transform = "scale(1)";
     pokemonImg.style.filter = "none";
-  }, 500);
+  }, 300);
 
   return porcentajeActual;
 }
@@ -234,7 +235,7 @@ function iniciarCicloBatalla(datosUsuario, datosRival) {
     }
     
     turnoUsuario = !turnoUsuario; 
-  }, 1000);
+  }, 300);
 }
 
 function finalizarBatalla(mensaje) {
@@ -277,4 +278,22 @@ function agregarSobres(cantidad) {
       console.log(data);
     })
     .catch((error) => console.error("Error:", error));
+}
+
+
+function NoHayRival() {
+  fetch('../api/obtenerBatalla.php')
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'error' && data.swal) {
+            Swal.fire({
+                title: data.swal.title,
+                text: data.swal.text,
+                icon: data.swal.icon
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }

@@ -40,7 +40,7 @@
       <div class="equipo"></div>
     </div>
   </section>
-  <section id="repetir"><button id="botonVolver">VOLVER</button></section>
+  <section id="repetir"><button id="botonVolver" class="bordeLetra">VOLVER</button></section>
   <section id="log"></section>
 </body>
 

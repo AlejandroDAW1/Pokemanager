@@ -41,7 +41,12 @@ $rivalNombre = $rivalDatos[0]['nombre'] ?? null;
 if (!$rivalId) {
     echo json_encode([
         'status' => 'error',
-        'message' => 'No se encontró un rival'
+        'message' => 'No se encontró un rival',
+        'swal' => [
+            'title' => 'Sin rival',
+            'text' => 'No se encontró un rival disponible para la batalla.',
+            'icon' => 'warning'
+        ]
     ]);
     exit;
 }
@@ -61,7 +66,7 @@ $pokemonsRival = $stmtSelectRival->fetchAll(PDO::FETCH_ASSOC);
 if ($pokemons && $pokemonsRival) {
     echo json_encode([
         'status' => 'success',
-        'message' => 'Pokemones obtenidos correctamente',
+        'message' => 'Pokemon obtenidos correctamente',
         'data' => [
             'usuario' => [
                 'id' => $usuarioId,
@@ -78,7 +83,7 @@ if ($pokemons && $pokemonsRival) {
 } else {
     echo json_encode([
         'status' => 'error',
-        'message' => 'No se encontraron pokemones'
+        'message' => 'No se encontraron pokemon'
     ]);
 }
 ?>

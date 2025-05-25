@@ -57,12 +57,12 @@
 }
 
 #log::-webkit-scrollbar {
-  width: 17px;
+    width: 17px;
 }
 
 #log::-webkit-scrollbar-track {
-  background: black;
-  border-radius: 11px;
+    background: black;
+    border-radius: 11px;
 }
 
 #log::-webkit-scrollbar-thumb {
@@ -90,4 +90,20 @@
     font-size: 16px;
     cursor: pointer;
 }
+#botonVolver
+{
+    display: flex;
+    margin: 0 auto;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
+body.dark-mode #botonBatalla,
+body.dark-mode #botonVolver {
+    background-color: var(--color-secondary);
+}
