@@ -2,7 +2,7 @@ const BotonBatalla = document.getElementById("botonBatalla");
 let intervaloBatalla;
 
 BotonBatalla.addEventListener("click", () => {
-  if (NoHayRival()) {
+    NoHayRival()
     reiniciarBatalla();
     const url = "../api/obtenerBatalla.php";
     fetch(url)
@@ -16,7 +16,6 @@ BotonBatalla.addEventListener("click", () => {
         iniciarCicloBatalla(data.data.usuario, data.data.rival);
       })
       .catch((error) => console.error("Error:", error));
-  }
 });
 
 function reiniciarBatalla() {
@@ -235,7 +234,7 @@ function iniciarCicloBatalla(datosUsuario, datosRival) {
     }
     
     turnoUsuario = !turnoUsuario; 
-  }, 300);
+  }, 1000);
 }
 
 function finalizarBatalla(mensaje) {
@@ -282,18 +281,22 @@ function agregarSobres(cantidad) {
 
 
 function NoHayRival() {
-  fetch('../api/obtenerBatalla.php')
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'error' && data.swal) {
-            Swal.fire({
-                title: data.swal.title,
-                text: data.swal.text,
-                icon: data.swal.icon
-            });
-        }
+  const contenedorBatalla = document.getElementById("containerBatalla");
+  const contenedorIniciarBatalla = document.getElementById("comenzarBatalla");
+  fetch("../api/obtenerBatalla.php")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "error" && data.swal) {
+        contenedorBatalla.style.display = "none";
+        contenedorIniciarBatalla.style.display = "flex";
+        Swal.fire({
+          title: data.swal.title,
+          text: data.swal.text,
+          icon: data.swal.icon,
+        });
+      }
     })
-    .catch(error => {
-        console.error('Error:', error);
+    .catch((error) => {
+      console.error("Error:", error);
     });
 }
