@@ -10,7 +10,7 @@
 </head>
 
 <header class="navbar container">
-    <h1 class="logo">Pokemanager</h1>
+    <img src="../img/logo.png" alt="Logo" class="logo">
     <div class="dark-mode-toggle">
         <p>Modo Oscuro</p>
         <label class="switch">
