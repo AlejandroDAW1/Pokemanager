@@ -12,7 +12,6 @@ BotonBatalla.addEventListener("click", () => {
         pintarUsuario("usuarioActual", data.data.usuario);
         pintarUsuario("usuarioRival", data.data.rival);
 
-        // Iniciar el ciclo de batalla automático
         iniciarCicloBatalla(data.data.usuario, data.data.rival);
       })
       .catch((error) => console.error("Error:", error));
@@ -44,7 +43,6 @@ function pintarUsuario(usuario, datos, pokemonsDerrotados = null) {
   const equipoPokemon = contenedor.querySelector(".equipo");
   equipoPokemon.innerHTML = "";
 
-  // Si hay un Pokémon derrotado, añadirlo primero en gris
   pokemonsDerrotados?.forEach((pokemonDerrotado) => {
     const imagenDerrotado = document.createElement("img");
     imagenDerrotado.src = "../" + pokemonDerrotado.icon_path;
@@ -52,7 +50,6 @@ function pintarUsuario(usuario, datos, pokemonsDerrotados = null) {
     equipoPokemon.appendChild(imagenDerrotado);
   });
 
-  // Añadir el resto de Pokémon del equipo
   datos.pokemons.forEach((pokemon, indice) => {
     if (indice === 0) return;
     const imagenPokemon = document.createElement("img");
@@ -82,23 +79,18 @@ const tipos = {
 };
 
 function iniciarBatalla(pokemonAtacante, pokemonDefensor) {
-  // Obtener los tipos de los Pokemon
   const tipoAtacante = pokemonAtacante["Type 1"];
   const tipoDefensor = pokemonDefensor["Type 1"];
   const multiplicador = tipos[tipoAtacante][tipoDefensor];
 
-  // Determinar si es ataque especial (50% de probabilidad)
   const esAtaqueEspecial = Math.random() < 0.5;
 
-  // Calcular el daño base según el tipo de ataque
   function calcularDanoBase() {
     if (esAtaqueEspecial) {
-      // Usar ataque especial y defensa especial
       const ataqueEsp = parseInt(pokemonAtacante["Sp. Atk"]);
       const defensaEsp = parseInt(pokemonDefensor["Sp. Def"]);
       return Math.floor((ataqueEsp / (1 + (defensaEsp / 100))) * 0.5 * multiplicador);
     } else {
-      // Usar ataque y defensa normales
       const ataque = parseInt(pokemonAtacante["Attack"]);
       const defensa = parseInt(pokemonDefensor["Defense"]);
       return Math.floor((ataque / (1 + (defensa / 100))) * 0.5);
@@ -133,7 +125,6 @@ function realizarTurno(pokemonAtacante, pokemonDefensor, contenedorDefensor) {
   const resultado = iniciarBatalla(pokemonAtacante, pokemonDefensor);
   const vidaActual = actualizarVida(contenedorDefensor, resultado.danoCausado);
 
-  // Actualizar el log de batalla con el tipo de ataque
   actualizarLog(
     `${pokemonAtacante.Name} usa ataque ${resultado.tipoAtaque} contra ${pokemonDefensor.Name}. ${resultado.efectividad} (${resultado.danoCausado} daño)`
   );
@@ -146,19 +137,15 @@ function actualizarVida(contenedor, dano) {
   const porcentajeSpan = contenedor.querySelector(".vida span");
   const pokemonImg = contenedor.querySelector(".pokemon img");
 
-  // Obtener el porcentaje actual y restar el daño
   let porcentajeActual = parseInt(porcentajeSpan.textContent);
   porcentajeActual = Math.max(0, porcentajeActual - dano);
 
-  // Actualizar la barra de vida y el texto
   barraVida.style.width = `${porcentajeActual}%`;
   porcentajeSpan.textContent = `${porcentajeActual}%`;
 
-  // Aplicar efecto de daño
   pokemonImg.style.transform = "scale(1.1)";
   pokemonImg.style.filter =" brightness(0) saturate(100%) invert(19%) sepia(95%) saturate(5425%) hue-rotate(356deg) brightness(91%) contrast(118%)";
 
-  // Remover el efecto después de 500ms
   setTimeout(() => {
     pokemonImg.style.transform = "scale(1)";
     pokemonImg.style.filter = "none";
